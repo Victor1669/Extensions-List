@@ -24,8 +24,8 @@
   /* OTHERS */
   --elementsDefaultShadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   --bodyBack: linear-gradient(rgb(0, 0, 35), rgb(0, 0, 60));
-  --themeToggleImage: url(../../public/images/icon-sun.svg);
-  --logoImg: url("../../public/images/logo-white.svg");
+  --themeToggleImage: url(/images/icon-sun.svg);
+  --logoImg: url("/images/logo-white.svg");
 }
 :root.light {
   /* PRINCIPAIS VARIÁVEIS */
