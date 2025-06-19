@@ -54,6 +54,8 @@ export default function ExtensionsList() {
     document.body.style.overflowY = "scroll";
   };
 
+  console.log(ExtList[0].logo);
+
   return (
     <>
       <Exclusao
