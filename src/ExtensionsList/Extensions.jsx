@@ -7,8 +7,9 @@ import "./Filter.css";
 import { useEffect, useRef, useState } from "react";
 
 export default function ExtensionsList() {
+  let btn1 = useRef();
   useEffect(() => {
-    document.getElementsByClassName("pageButton")[0].click();
+    btn1.current.click();
   }, []);
 
   const filters = ["All", "Active", "Inactive"];
@@ -65,6 +66,7 @@ export default function ExtensionsList() {
         <div className="listButtons">
           {filters.map((texto, index) => (
             <button
+              ref={index == 0 ? btn1 : null}
               key={index}
               className="focusOutlineRed pageButton"
               onClick={() => {
