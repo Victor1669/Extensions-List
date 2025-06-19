@@ -1,0 +1,66 @@
+:root {
+  --titleForeColor: white;
+
+  --filterButtonHoverBack: rgb(79, 85, 104);
+  --filterButtonHoverForeColor: white;
+  --filterButtonBorder: 1px solid rgb(58, 63, 79);
+  --filterButtonForeColor: white;
+
+  --filterButtonBackActive: rgb(240, 93, 82);
+  --filterButtonBackActiveHover: #c7231a;
+}
+:root.light {
+  --titleForeColor: rgb(25, 32, 53);
+
+  --filterButtonHoverBack: rgba(230, 230, 230, 1);
+  --filterButtonHoverForeColor: rgb(96, 103, 128);
+  --filterButtonBorder: 1px solid transparent;
+  --filterButtonForeColor: rgb(40, 47, 68);
+
+  --filterButtonBackActive: #c7231a;
+  --filterButtonBackActiveHover: rgb(240, 93, 82);
+}
+#pagiCont {
+  grid-area: Filter;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-areas: "Title Btns";
+  align-items: center;
+  gap: 10px;
+}
+.filterTitle {
+  grid-area: Title;
+  color: var(--titleForeColor);
+}
+.listButtons {
+  grid-area: Btns;
+  display: flex;
+  justify-content: end;
+  translate: -2px;
+  gap: 10px;
+}
+.pageButton {
+  background: var(--primaryColor);
+  border: var(--filterButtonBorder);
+  color: var(--filterButtonForeColor);
+  box-shadow: var(--elementsDefaultShadow);
+  cursor: pointer;
+  padding: 10px 22px;
+  border-radius: 25px;
+
+  &:hover {
+    background-color: var(--filterButtonHoverBack);
+    color: var(--filterButtonHoverForeColor);
+  }
+}
+.pageButtonActive {
+  background: var(--filterButtonBackActive);
+  border: 1px double var(--filterButtonBackActive);
+  color: var(--primaryColor);
+
+  &:hover {
+    background-color: var(--filterButtonBackActiveHover);
+    border: 1px double var(--filterButtonBackActiveHover);
+    color: var(--primaryColor);
+  }
+}

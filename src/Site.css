@@ -1,0 +1,139 @@
+:root {
+  /* PRINCIPAIS VARIÁVEIS */
+  --dist: 20px;
+  --primaryColor: rgb(40, 47, 68);
+  --secondaryColor: rgb(58, 63, 79);
+  --ternaryColor: rgb(79, 85, 104);
+  --borderType: 1px solid;
+  --foreColor: white;
+  --activeColor: rgb(240, 93, 82);
+  --activeHoverColor: #c7231a;
+
+  /* EXTENSIONS */
+  --removeBorder: var(--borderType) var(--secondaryColor);
+  --removeHoverBorder: var(--borderType) var(--activeColor);
+
+  /* HEADER */
+  --themeToggleBack: var(--primaryColor);
+  --themeToggleHoverBack: var(--ternaryColor);
+
+  --headerBack: rgb(
+    from var(--primaryColor) calc(r - 15) calc(g - 15) calc(b - 15)
+  );
+
+  /* OTHERS */
+  --elementsDefaultShadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  --bodyBack: linear-gradient(rgb(0, 0, 35), rgb(0, 0, 60));
+  --themeToggleImage: url(../../public/images/icon-sun.svg);
+  --logoImg: url("../../public/images/logo-white.svg");
+}
+:root.light {
+  /* PRINCIPAIS VARIÁVEIS */
+  --dist: 20px;
+  --primaryColor: snow;
+  --secondaryColor: white;
+  --ternaryColor: rgb(230, 230, 230);
+  --borderType: 1px solid;
+  --foreColor: rgb(40, 47, 68);
+  --activeColor: #c7231a;
+  --activeHoverColor: rgb(240, 93, 82);
+
+  /* EXTENSIONS */
+  --removeBorder: var(--borderType) rgb(40, 47, 68);
+  --removeHoverBorder: var(--borderType) var(--activeColor);
+
+  /* HEADER */
+  --themeToggleBack: rgb(
+    from var(--primaryColor) calc(r - 24) calc(g - 24) calc(b - 24)
+  );
+  --themeToggleHoverBack: rgb(156, 158, 158);
+
+  --headerBack: var(--primaryColor);
+
+  /* OTHERS */
+  --elementsDefaultShadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  --bodyBack: linear-gradient(#deeefd, #e8f1f8);
+  --themeToggleImage: url(/images/icon-moon.svg);
+  --logoImg: url("/images/logo.svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+body,
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+#root {
+  overflow-y: hidden;
+}
+body {
+  background-image: var(--bodyBack);
+  scrollbar-color: red orange;
+}
+.focusOutlineRed {
+  &:focus {
+    outline: 2px solid var(--activeColor);
+    outline-offset: 2px;
+  }
+}
+main {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 25.5vw 25.5vw 25.5vw;
+  grid-template-rows: 40px 90px 90px auto 30px;
+  grid-template-areas:
+    ". . ."
+    "Header Header Header"
+    "Filter Filter Filter"
+    "Ext Ext Ext"
+    ". . .";
+  gap: 15px;
+  width: 100vw;
+}
+header {
+  grid-area: Header;
+}
+.filterButtons {
+  grid-area: Filter;
+}
+.extensionContainer {
+  grid-area: Ext;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 15px;
+}
+@media only screen and (max-width: 1200px) {
+  .extensionContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 850px) {
+  main {
+    grid-template-rows: 20px 90px 110px auto 15px;
+  }
+  .filterCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .extensionContainer {
+    grid-template-columns: 100%;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #pagiCont {
+    display: flex;
+    flex-direction: column;
+  }
+}

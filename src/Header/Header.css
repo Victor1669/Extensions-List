@@ -1,0 +1,38 @@
+header {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-areas: "Title . Theme";
+  align-items: center;
+
+  background: var(--headerBack);
+  width: 100%;
+  height: min-content;
+  padding: 15px;
+  border-radius: 15px;
+  caret-color: transparent;
+  translate: -2px;
+
+  box-shadow: var(--elementsDefaultShadow);
+
+  img {
+    content: var(--logoImg);
+  }
+}
+
+.themeToggle {
+  grid-area: Theme;
+  justify-self: end;
+
+  width: 41px;
+  height: 41px;
+  padding: 5px;
+  background: var(--themeToggleBack) var(--themeToggleImage) center no-repeat;
+  background-size: 18px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: var(--themeToggleHoverBack);
+  }
+}

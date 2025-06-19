@@ -1,0 +1,62 @@
+.extCont {
+  background: var(--primaryColor);
+  color: var(--foreColor);
+  width: calc(100% - 4px);
+  height: 200px;
+
+  position: relative;
+
+  padding: var(--dist);
+  border: var(--borderType) var(--secondaryColor);
+  border-radius: 15px;
+
+  box-shadow: var(--elementsDefaultShadow);
+  img {
+    float: left;
+    margin: 0 var(--dist) var(--dist) 0;
+  }
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+p {
+  font-size: 0.9rem;
+  width: calc(100% - 80px);
+  justify-self: end;
+}
+.btnRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--pageButtonSize);
+  background: var(--primaryColor);
+  border-radius: 15px;
+  padding: 8px 12px;
+  border: var(--removeBorder);
+  color: var(--foreColor);
+
+  box-sizing: content-box;
+  cursor: pointer;
+  list-style-type: none;
+
+  position: absolute;
+  bottom: var(--dist);
+  left: var(--dist);
+
+  &:focus {
+    background-color: var(--ternaryColor);
+  }
+
+  &:hover {
+    background-color: var(--activeColor);
+    border: var(--removeHoverBorder);
+    color: var(--primaryColor);
+  }
+}
+.toggleCont {
+  position: absolute;
+  right: var(--dist);
+  bottom: calc(1.5 * var(--dist));
+}
