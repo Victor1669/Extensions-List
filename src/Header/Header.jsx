@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 import "./Header.css";
 
-import Sun from "../assets/images/icon-sun.svg";
-import Moon from "../assets/images/icon-moon.svg";
-import LogoDark from "../assets/images/logo.svg";
-import LogoLight from "../assets/images/logo-white.svg";
+import Sun from "/icon-sun.svg";
+import Moon from "/icon-moon.svg";
+import LogoDark from "/logo.svg";
+import LogoLight from "/logo-white.svg";
 
 export default function Header() {
   const [tema, setTema] = useState("dark");
