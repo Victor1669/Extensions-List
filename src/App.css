@@ -1,0 +1,116 @@
+:root {
+  --background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --active: hsl(3, 86%, 64%);
+  --activeHover: hsl(3, 71%, 56%);
+
+  --toggleBackColor: hsl(226, 11%, 37%);
+
+  --foreColor: hsl(200, 60%, 99%);
+  --foreHoverColor: hsl(227, 75%, 14%);
+
+  --fHoverBack: hsl(226, 11%, 37%);
+
+  --headerBack: hsl(226, 25%, 17%);
+  --headerImgBack: hsl(225, 23%, 24%);
+  --headerImgHoverBack: hsl(226, 11%, 37%);
+
+  --extBack: hsl(226, 25%, 17%);
+  --extBorderColor: hsl(226, 11%, 37%);
+}
+:root.light {
+  --background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --active: hsl(3, 77%, 44%);
+  --activeHover: hsl(3, 71%, 56%);
+
+  --toggleBackColor: hsl(0, 0%, 78%);
+
+  --foreColor: hsl(227, 75%, 14%);
+  --foreHoverColor: hsl(200, 60%, 99%);
+
+  --fHoverBack: hsl(0, 0%, 93%);
+
+  --headerBack: hsl(200, 60%, 99%);
+  --headerImgBack: hsl(0, 0%, 93%);
+  --headerImgHoverBack: hsl(0, 0%, 78%);
+
+  --extBack: hsl(0, 0%, 93%);
+  --extBorderColor: hsla(226, 11%, 37%, 0.178);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "NotoSans", sans-serif;
+  color: var(--foreColor);
+}
+
+html,
+body,
+#root,
+main {
+  width: 100vw;
+  min-height: 779px;
+  background-image: var(--background);
+  overflow-x: hidden;
+
+  *:not(.extension) {
+    transition: var(--transition);
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 699px) {
+  .extensionCont {
+    grid-template-columns: 90vw;
+  }
+  .filter {
+    flex-direction: column;
+    height: fit-content !important;
+    .buttons {
+      position: initial !important;
+      margin-top: 20px;
+    }
+  }
+}
+@media only screen and (min-width: 700px) {
+  .extensionCont {
+    grid-template-columns: 45vw 45vw;
+  }
+}
+@media only screen and (min-width: 1049px) {
+  .extensionCont {
+    grid-template-columns: 30vw 30vw 30vw;
+  }
+}
+
+header,
+.filter {
+  width: 90vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.backBorder {
+  border: 1px solid var(--extBorderColor);
+}
+.focusOutlineRed {
+  &:focus {
+    outline: 2px solid hsl(3, 86%, 64%);
+    outline-offset: 2px;
+  }
+}
+.defaultHover {
+  &:hover {
+    background-color: hsl(226, 11%, 37%) !important;
+  }
+}
+.filterHover {
+  &:hover:not(.active) {
+    background-color: var(--fHoverBack);
+  }
+}

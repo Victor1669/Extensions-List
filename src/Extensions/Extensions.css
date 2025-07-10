@@ -1,0 +1,42 @@
+.extensionCont {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+
+  width: 100vw;
+
+  .extension {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    padding: 15px;
+    position: relative;
+    background-color: var(--extBack);
+
+    img {
+      float: left;
+      margin-right: 15px;
+    }
+    h3 {
+      font-size: 18.72px;
+    }
+    button {
+      padding: 8px 12px;
+    }
+  }
+}
+.removeBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--extBack);
+
+  border-radius: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--active);
+    border-color: var(--active);
+    color: var(--foreHoverColor);
+  }
+}

@@ -1,0 +1,91 @@
+:root {
+  /* TOGGLE */
+  --transition: 0.4s;
+
+  --toggleHeight: 24px;
+  --toggleWidth: 40px;
+  --toggleBorderRadius: calc(var(--toggleHeight) / 2);
+
+  --ballSize: calc(var(--toggleHeight) - 2 * var(--ballDist));
+  --ballDist: 3px;
+
+  --toggleBack: hsl(225, 23%, 24%);
+}
+:root.light {
+  --toggleBack: hsl(0, 0%, 78%);
+}
+
+.toggleCont {
+  width: var(--toggleWidth);
+  height: var(--toggleHeight);
+  border-radius: var(--toggleBorderRadius);
+  border: 0 !important;
+
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+/* CONTAINER */
+.switch {
+  /* MEDIDAS DO CONTAINER */
+
+  display: inline-block;
+  inset: 0;
+  position: absolute;
+
+  input {
+    /* O INPUT SÓ ESTÁ PELA FUNÇÃO E NÃO PRECISA APARECER */
+    display: none;
+
+    /* QUANDO ELE FOR CLICADO */
+    &:checked {
+      + .slider_round {
+        background-color: var(--active);
+        /* MOVIMENTO DA BOLINHA */
+        &:before {
+          transition: var(--transition);
+          translate: 100%;
+        }
+      }
+      &:hover {
+        + .slider_round {
+          background-color: var(--activeHover);
+        }
+      }
+    }
+  }
+}
+
+.slider_round {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* OCUPAR TODO O ESPAÇO DO ELEMENTO PAI */
+  border: var(--toggleBorder);
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--toggleBack);
+  border-radius: var(--toggleBorderRadius);
+  scale: 1;
+
+  &:hover {
+    background-color: var(--toggleBackColor);
+  }
+
+  /* BOLINHA */
+  &:before {
+    transition: var(--transition);
+    translate: var(--ballDist) -0px;
+
+    position: absolute;
+
+    content: ""; /* OBRIGATÓRIO */
+    /* MEDIDAS DA BOLINHA */
+    height: var(--ballSize);
+    width: var(--ballSize);
+    background: hsl(0, 0%, 93%);
+    border-radius: 50%;
+  }
+}
